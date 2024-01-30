@@ -17,7 +17,7 @@ function Table({estadoSelecionado}) {
         fetchData() 
     }, [estadoSelecionado]);
 
-    const cidadesFiltradas = cidade.filter((cidade) => cidade.nome);
+    const cidadesFiltradas = cidade.filter((UF) => UF.sigla);
     console.log(cidadesFiltradas);
 
     return (
