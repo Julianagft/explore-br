@@ -17,7 +17,6 @@ import Table from "./Table";
                 console.error("Erro ao obter dados dos estados", error);
             }
         }
-
         fetchData()
     }, []);
 
@@ -25,7 +24,6 @@ import Table from "./Table";
       const valorEstadoSelecionado = evento.target.value;
       setEstadoSelecionado(valorEstadoSelecionado);
     }
-
        
     return (
     <div className='card'>
@@ -33,7 +31,7 @@ import Table from "./Table";
         <select defaultValue={null} onChange={mudaEstado}>
           <option value={null}>Selecione</option>
           {estado.map((estado, posicao) => (
-            <option key={posicao} value={"Selecione um estado"}>
+            <option key={posicao} value={estado.sigla}>
               {`${estado.nome} - ${estado.sigla}`}
             </option>
           ))}
