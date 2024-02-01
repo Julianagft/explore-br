@@ -30,7 +30,7 @@ import Table from "./Table";
     <div className='card flex flex-col justify-center'>
         <div className="flex justify-center">
           <label htmlFor="estadosSelect" className="rounded-lg p-0.5 text-pink font-bold mx-2">Estados do País:</label>
-            <select className="rounded-lg p-0.5 w-28 text-pink font-bold mx-2" defaultValue={null} onChange={mudaEstado}>
+            <select className="rounded-lg p-0.5 w-44 text-pink font-bold mx-2" defaultValue={null} onChange={mudaEstado}>
               <option value={null}>Selecione</option>
               {estado.map((estado, posicao) => (
                 <option key={posicao} value={estado.sigla}>
