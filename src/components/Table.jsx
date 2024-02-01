@@ -3,12 +3,11 @@ import api from "../Services/Api"
 
 function Table({estadoSelecionado}) {
     const [cidades, setCidades] = useState([]);
-
     useEffect(() => {
         async function fetchData() {
             try {
                 const data = await api.ApiCidadesPorEstado(estadoSelecionado);
-                setCidades(data.slice(0, 12));
+                setCidades(data);
             } catch(error) {
                 console.error("Erro ao obter dados das cidades", error);
             }
@@ -17,13 +16,12 @@ function Table({estadoSelecionado}) {
     }, [estadoSelecionado]);
 
     return (
-        <div className="table">
+        <div className="table max-h-96">
             <table>
                 {cidades.map((cidade, posicao) => (
-                          <tr key={posicao}><td>{cidade.nome}</td></tr>
-                        ))}
+                <tr key={posicao}><td>{cidade.nome}</td></tr>
+            ))}
             </table>
-            <button className="bg-black">Próxima Pagina</button>
         </div>
     )
 };

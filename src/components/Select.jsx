@@ -27,16 +27,21 @@ import Table from "./Table";
        
     return (
     <div className='card'>
-      <label htmlFor="estadosSelect">Estados do País:</label>
+      <div className="fixed">
+        <label htmlFor="estadosSelect">Estados do País:</label>
         <select defaultValue={null} onChange={mudaEstado}>
-          <option value={null}>Selecione</option>
-          {estado.map((estado, posicao) => (
-            <option key={posicao} value={estado.sigla}>
-              {`${estado.nome} - ${estado.sigla}`}
-            </option>
-          ))}
+            <option value={null}>Selecione</option>
+            {estado.map((estado, posicao) => (
+              <option key={posicao} value={estado.sigla}>
+                {`${estado.nome} - ${estado.sigla}`}
+              </option>
+            ))}
         </select>
-        {estadoSelecionado && <Table estadoSelecionado={estadoSelecionado} />}    
+      </div>
+      <div className="overflow-y-auto flex-1">
+        {estadoSelecionado && <Table estadoSelecionado={estadoSelecionado} />}   
+      </div>
+         
     </div>
     )
 }
